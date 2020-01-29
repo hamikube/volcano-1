@@ -18,7 +18,8 @@ data:
       - name: gang
       - name: conformance
     - plugins:
-      - name: drf
+     - name: limitAllocator
+     - name: drf
       - name: predicates
       - name: proportion
       - name: nodeorder
