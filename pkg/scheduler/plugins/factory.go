@@ -18,7 +18,7 @@ package plugins
 
 import (
 	"volcano.sh/volcano/pkg/scheduler/framework"
-
+        "volcano.sh/volcano/pkg/scheduler/plugins/limitAllocator"
 	"volcano.sh/volcano/pkg/scheduler/plugins/binpack"
 	"volcano.sh/volcano/pkg/scheduler/plugins/conformance"
 	"volcano.sh/volcano/pkg/scheduler/plugins/drf"
@@ -31,6 +31,7 @@ import (
 
 func init() {
 	// Plugins for Jobs
+	framework.RegisterPluginBuilder(limitAllocator.PluginName, limitAllocator.New)
 	framework.RegisterPluginBuilder(drf.PluginName, drf.New)
 	framework.RegisterPluginBuilder(gang.PluginName, gang.New)
 	framework.RegisterPluginBuilder(predicates.PluginName, predicates.New)
